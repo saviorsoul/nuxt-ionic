@@ -139,7 +139,8 @@ export default defineNuxtPlugin(async nuxtApp => {
             createError({
               statusMessage: `Route navigation aborted: ${initialURL}`,
             })
-          return callWithNuxt(nuxtApp, showError, [error])
+          await callWithNuxt(nuxtApp, showError, [error])
+          return false
         }
       }
       if (result || result === false) {
@@ -163,13 +164,23 @@ export default defineNuxtPlugin(async nuxtApp => {
           statusMessage: `Page not found: ${to.fullPath}`,
         }),
       ])
-    } else if (process.server && to.matched[0].name === '404' && nuxtApp.ssrContext) {
-      nuxtApp.ssrContext.event.res.statusCode = 404
     } else if (process.server) {
       const currentURL = to.fullPath || '/'
       if (!isEqual(currentURL, initialURL)) {
         await callWithNuxt(nuxtApp, navigateTo, [currentURL])
       }
+    }
+  })
+
+  nuxtApp.hooks.hookOnce('app:created', async () => {
+    try {
+      await router.replace({
+        ...router.resolve(initialURL),
+        name: void 0,
+        force: true,
+      })
+    } catch (error2) {
+      callWithNuxt(nuxtApp, showError, [error2])
     }
   })
 

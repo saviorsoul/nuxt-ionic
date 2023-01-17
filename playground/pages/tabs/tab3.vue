@@ -6,6 +6,7 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
+      {{  timeData }}
       <ion-header collapse="condense">
         <ion-toolbar>
           <ion-title size="large">Tab 3</ion-title>
@@ -15,3 +16,8 @@
     </ion-content>
   </ion-page>
 </template>
+<script setup lang="ts">
+const { data: timeData } = await useFetch(
+  'https://worldtimeapi.org/api/timezone/Europe/Kiev'
+);
+</script>
