@@ -20,4 +20,10 @@
 const { data: timeData } = await useFetch(
   'https://worldtimeapi.org/api/timezone/Europe/Kiev'
 );
+useHead({
+  titleTemplate: `%s - useHead example - ${timeData.value.datetime}`,
+  bodyAttrs: {
+    class: 'test'
+  }
+})
 </script>
