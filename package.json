@@ -1,8 +1,8 @@
 {
-  "name": "@nuxtjs/ionic",
+  "name": "nuxt-ionic",
   "version": "0.8.0",
   "license": "MIT",
-  "repository": "nuxt-modules/ionic",
+  "repository": "saviorsoul/nuxt-ionic",
   "description": "Ionic integration for Nuxt",
   "keywords": [
     "nuxt",
