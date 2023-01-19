@@ -44,12 +44,10 @@
     "lint:eslint": "eslint --fix",
     "lint:prettier": "prettier --write --loglevel warn",
     "prepack": "pnpm build",
-    "prepare": "husky install",
     "prepublishOnly": "pnpm lint && pnpm test && pinst --disable",
     "release": "release-it",
     "test": "vitest run",
     "test:types": "tsc --noEmit",
-    "postinstall": "husky install",
     "postpublish": "pinst --enable"
   },
   "dependencies": {
@@ -92,7 +90,7 @@
     "vue": "3.2.45"
   },
   "resolutions": {
-    "@nuxtjs/ionic": "link:."
+    "nuxt-ionic": "link:."
   },
   "packageManager": "pnpm@7.25.0",
   "volta": {
