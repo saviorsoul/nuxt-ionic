@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 overrides:
-  '@nuxtjs/ionic': link:.
+  'nuxt-ionic': link:.
 
 importers:
 
@@ -95,13 +95,13 @@ importers:
       '@capacitor/camera': 4.1.4
       '@capacitor/filesystem': 4.1.4
       '@capacitor/storage': 1.2.5
-      '@nuxtjs/ionic': link:..
+      'nuxt-ionic': link:..
       nuxt: 3.0.0
     devDependencies:
       '@capacitor/camera': 4.1.4
       '@capacitor/filesystem': 4.1.4
       '@capacitor/storage': 1.2.5
-      '@nuxtjs/ionic': link:..
+      'nuxt-ionic': link:..
       nuxt: 3.0.0
 
 packages:

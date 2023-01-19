@@ -78,10 +78,10 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: '@nuxtjs/ionic',
+    name: 'nuxt-ionic',
     configKey: 'ionic',
     compatibility: {
-      nuxt: '^3.0.0-rc.12',
+      nuxt: '^3.0.0',
     },
   },
   defaults: {
